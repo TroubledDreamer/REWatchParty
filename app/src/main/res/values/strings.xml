@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">REWatchParty</string>
+
+
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+
+
+    <string name="user_name_placeholder">User Name</string>
+    <string name="email_placeholder">Email</string>
+    <string name="password_placeholder">Password</string>
+
+
 </resources>

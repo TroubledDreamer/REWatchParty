@@ -17,16 +17,8 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalTvMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            REWatchPartyTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    shape = RectangleShape
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+        setContentView(R.layout.login_activity)
+
     }
 }
 
