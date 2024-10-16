@@ -10,5 +10,7 @@
     <string name="email_placeholder">Email</string>
     <string name="password_placeholder">Password</string>
 
+    <string name="enter_button_text">Enter</string>
+
 
 </resources>

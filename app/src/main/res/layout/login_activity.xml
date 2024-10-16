@@ -7,33 +7,37 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/loginButton"
+        android:id="@+id/LoginButton"
         android:layout_width="81dp"
         android:layout_height="33dp"
         android:text="@string/log_in"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.232" />
 
     <TextView
-        android:id="@+id/Signin"
+        android:id="@+id/SignInButton"
         android:layout_width="72dp"
-        android:layout_height="31dp"
+        android:layout_height="32dp"
         android:text="@string/sign_up"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.579"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.261" />
+        app:layout_constraintVertical_bias="0.235" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="509dp"
-        android:layout_height="60dp"
+        android:id="@+id/PasswordInput"
+        android:layout_width="520dp"
+        android:layout_height="54dp"
         android:autofillHints="@string/password_placeholder"
         android:ems="10"
         android:hint="@string/password_placeholder"
@@ -45,7 +49,7 @@
         app:layout_constraintVertical_bias="0.752" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/EmailInput"
         android:layout_width="522dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -62,12 +66,23 @@
         android:layout_width="521dp"
         android:layout_height="57dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/user_name_placeholder"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintVertical_bias="0.362" />
+
+    <Button
+        android:id="@+id/EditButton"
+        android:layout_width="159dp"
+        android:layout_height="42dp"
+        android:text="@string/enter_button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.907" />
 </androidx.constraintlayout.widget.ConstraintLayout>
