@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.rewatchparty.data.User
 import com.example.rewatchparty.data.UserViewModel
+import com.google.firebase.Firebase
+import com.google.firebase.database.database
 
 class MainActivity : ComponentActivity() {
 
@@ -72,7 +74,15 @@ class MainActivity : ComponentActivity() {
                 // Inform the user that the password is required
                 Toast.makeText(this, "Please enter a password", Toast.LENGTH_SHORT).show()
             }
+
+
         }
+
+        // Write a message to the database
+        val database = Firebase.database
+        val myRef = database.getReference("message")
+
+        myRef.setValue("Testing!")
     }
 
     private fun insertDataToDatabase() {
