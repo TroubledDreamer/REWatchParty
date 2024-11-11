@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context=".CreateOrJoinWPActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@android:color/holo_blue_light">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="WATCH PARTY"
+            android:textAlignment="center"
+            android:textColor="#0D0C0C"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="34dp"
+            android:layout_height="53dp"
+            app:srcCompat="@drawable/ic_menu"
+            tools:layout_editor_absoluteX="7dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="222dp"
+        android:layout_height="197dp"
+        android:background="@color/cardview_light_background"
+        app:circularflow_defaultRadius="@dimen/cardview_default_radius"
+        app:srcCompat="@drawable/createwatchparty_foreground"
+        tools:layout_editor_absoluteX="194dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="219dp"
+        android:layout_height="190dp"
+        android:background="@android:color/background_light"
+        app:circularflow_defaultRadius="@dimen/cardview_default_radius"
+        app:srcCompat="@drawable/capture"
+        tools:layout_editor_absoluteX="567dp"
+        tools:layout_editor_absoluteY="189dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Watch Party"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="142dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Watch Party"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="621dp"
+        tools:layout_editor_absoluteY="142dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
