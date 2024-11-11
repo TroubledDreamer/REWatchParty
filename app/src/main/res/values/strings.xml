@@ -14,6 +14,7 @@
 
 
     <string name="ic_user_placeholder">Carlyon</string>
+    <string name="title_activity_create_join_room">CreateJoinRoomActivity</string>
 
 
 </resources>

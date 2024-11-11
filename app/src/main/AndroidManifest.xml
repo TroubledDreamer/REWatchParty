@@ -17,6 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.REWatchParty">
         <activity
+            android:name=".CreateOrJoinWPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateJoinRoomActivity"
+            android:exported="false"
+            android:label="@string/title_activity_create_join_room"
+            android:theme="@style/Theme.REWatchParty" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -26,7 +34,6 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".WaitRoomActivity" />
     </application>
 
