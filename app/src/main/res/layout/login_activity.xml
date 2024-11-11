@@ -11,56 +11,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="8dp"
-            tools:ignore="MissingConstraints">
-
-            <!-- Signal Icon -->
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="150dp"
-                android:layout_height="90dp"
-                android:hint="9:41 Mon Jun 10"
-                android:paddingStart="10dp"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="0dp" />
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="86dp"
-                android:src="@drawable/ic_signal" />
-
-            <!-- Wi-Fi Icon -->
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_wifi" />
-
-            <!-- Battery Percentage Text -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100%"
-                android:textColor="#000000"
-                android:layout_marginStart="4dp" />
-
-            <!-- Battery Icon -->
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_battery"/>
-        </LinearLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        />
 
     <!-- Background Image -->
     <ImageView
@@ -72,8 +23,8 @@
 
     <!-- Foreground Content -->
     <LinearLayout
-        android:layout_width="360dp"
-        android:layout_height="627dp"
+        android:layout_width="424dp"
+        android:layout_height="640dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
         android:gravity="center"
@@ -85,8 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="50dp"
             android:layout_marginTop="10dp"
-            android:drawableEnd="@drawable/ic_clear"
             android:background="@drawable/rounded_edit_text"
+            android:drawableEnd="@drawable/ic_clear"
             android:hint="Username"
             android:padding="12dp" />
 

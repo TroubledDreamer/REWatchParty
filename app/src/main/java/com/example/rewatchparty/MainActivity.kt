@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login_activity)
+        setContentView(R.layout.loginn_activity)
 
         // Bind views
         LoginButton = findViewById(R.id.LoginButton)
