@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
 
             if (password.isNotEmpty()) {
                 // Navigate to WaitRoomActivity once password is entered
-                val intent = Intent(this, CreateRoomActivity::class.java)
+                val intent = Intent(this, CreateOrJoinWPActivity::class.java)
                 startActivity(intent)
 
 
