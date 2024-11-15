@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
 
             if (password.isNotEmpty()) {
                 // Navigate to WaitRoomActivity once password is entered
-                val intent = Intent(this, WaitRoomActivity::class.java)
+                val intent = Intent(this, CreateRoomActivity::class.java)
                 startActivity(intent)
 
 
