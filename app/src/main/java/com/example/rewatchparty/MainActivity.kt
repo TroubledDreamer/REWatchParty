@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.rewatchparty.data.User
 import com.example.rewatchparty.data.UserViewModel
 import com.google.firebase.Firebase
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.database
 
 class MainActivity : ComponentActivity() {
@@ -59,6 +60,8 @@ class MainActivity : ComponentActivity() {
         // Handle "Edit" button click (navigate to waiting room when password is entered)
         EditButton.setOnClickListener {
             val password = PasswordInput.text.toString()
+            val userName = UserNameInput.text.toString()
+            val email = EmailInput.text.toString()
 
             insertDataToDatabase()
 
@@ -66,6 +69,9 @@ class MainActivity : ComponentActivity() {
 
             if (password.isNotEmpty()) {
                 // Navigate to WaitRoomActivity once password is entered
+                val database2 = FirebaseDatabase.getInstance();
+                val ref = database2.getReference("users");
+                ref.child(userName).setValue(email)
                 val intent = Intent(this, CreateOrJoinWPActivity::class.java)
                 startActivity(intent)
 
