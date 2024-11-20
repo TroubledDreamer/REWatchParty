@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
+
 
 }
 
@@ -89,5 +91,13 @@ dependencies {
     // Lifecycle dependencies
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
+
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
+
+    implementation("com.google.firebase:firebase-analytics")
+
+
+
+
 
 }
