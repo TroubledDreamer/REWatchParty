@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
+
 }
 
 android {
@@ -64,4 +66,28 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+
+
+
+
+
+
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)  // Use Kotlin Symbol Processing (KSP) for annotation processing
+    implementation(libs.room.ktx)
+
+
+
+    // Optional Room dependencies
+    implementation(libs.room.rxjava3)
+    implementation(libs.room.guava)
+    implementation(libs.room.paging)
+    testImplementation(libs.room.testing)
+
+    // Lifecycle dependencies
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+
 }

@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import android.widget.LinearLayout
+import androidx.lifecycle.ViewModelProvider
+import com.example.rewatchparty.data.UserViewModel
 
 class WaitRoomActivity : AppCompatActivity() {
 
@@ -20,6 +22,10 @@ class WaitRoomActivity : AppCompatActivity() {
     private lateinit var adapter: ArrayAdapter<String>
 
     private val addedUsers = mutableSetOf<String>()
+    private lateinit var userViewModel: UserViewModel
+
+
+
 
     private val usersList = listOf("John Doe", "Jane Smith", "Alice Johnson", "Bob Brown", "Chris Evans")
 
@@ -33,6 +39,16 @@ class WaitRoomActivity : AppCompatActivity() {
         userContainer = findViewById(R.id.userContainer)
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, usersList)
         usersListView.adapter = adapter
+
+//        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+//        userViewModel.readAllData.observe(this) { users ->
+//            val userList = users.map { it.userName }
+//            adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, userList)
+//            usersListView.adapter = adapter
+//        }
+
+
+
         searchInput.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
