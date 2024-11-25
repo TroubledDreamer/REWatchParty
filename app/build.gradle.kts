@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
-    alias(libs.plugins.google.gms.google.services)
+    id("com.google.gms.google-services")
 //    alias(libs.plugins.kotlin.compose)
 
 }
@@ -69,18 +69,21 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.material)
     implementation(libs.androidx.activity)
-    implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-
-
-
-
-
-
+    implementation(libs.play.services.auth)
+//    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.com.firebaseui.firebase.ui.auth7)
+    implementation(libs.firebase.ui.database)
+    implementation(platform(libs.firebase.bom.v3223))
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.google.firebase.auth.ktx)
 
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)  // Use Kotlin Symbol Processing (KSP) for annotation processing

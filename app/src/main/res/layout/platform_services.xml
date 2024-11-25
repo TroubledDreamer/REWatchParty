@@ -31,17 +31,16 @@
         android:scrollbarSize="10dp">
 
         <TextView
-            android:id="@+id/createWPText"
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create Watch Party"
+            android:text="Join Watch Party"
             android:textAlignment="center"
             android:textColor="#F8F5F5"
             android:textSize="34sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/WPIDEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="30dp"
@@ -49,58 +48,33 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/rounded_edit_text"
             android:drawableEnd="@drawable/ic_clear"
-            android:hint="Set Watch Party ID...."
+            android:hint="Enter Watch Party ID...."
             android:padding="12dp" />
 
         <EditText
-            android:id="@+id/WPPasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:layout_marginTop="0dp"
             android:background="@drawable/rounded_edit_text"
-            android:hint="Set Password"
+            android:hint="Enter Password"
             android:inputType="textPassword"
             android:padding="12dp" />
 
-        <SeekBar
-            android:id="@+id/userSeekBar"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_marginVertical="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/design_default_color_background"
-            android:backgroundTint="#9DFFFEFE"
-            android:max="50"
-            android:progress="2"
-            android:progressTint="@color/design_default_color_primary_dark"
-            android:scrollbarThumbHorizontal="@color/design_default_color_primary"
-            android:secondaryProgressTint="@color/design_default_color_primary_dark" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/material_dynamic_neutral20"
-            android:backgroundTint="#62AAAAAA"
-            android:text="Set Maximum Watch Party Occupants"
-            android:textAlignment="center"
-            android:textColor="@color/design_default_color_background"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
         <Button
-            android:id="@+id/CreateWPButton"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginVertical="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/rounded_button"
-            android:text="CREATE WATCH PARTY"
+            android:text="JOIN WATCH PARTY"
             android:textColor="@color/join_background"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
