@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/signup_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+            tools:ignore="MissingConstraints">
+
+            <!-- Signal Icon -->
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="150dp"
+                android:layout_height="90dp"
+                android:hint="9:41 Mon Jun 10"
+                android:paddingStart="10dp"
+                tools:ignore="Autofill,HardcodedText,MissingConstraints,RtlSymmetry,TextFields"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="86dp"
+                android:src="@drawable/ic_signal"
+                tools:ignore="ContentDescription" />
+
+            <!-- Wi-Fi Icon -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_wifi"
+                tools:ignore="ContentDescription" />
+
+            <!-- Battery Percentage Text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="#000000"
+                android:layout_marginStart="4dp"
+                tools:ignore="HardcodedText" />
+
+            <!-- Battery Icon -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_battery"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="627dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Sign Up Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:text="SIGN UP"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <!-- Create Account Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/create_your_account"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <!-- Username Input -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableEnd="@drawable/ic_clear"
+            android:hint="@string/username"
+            android:padding="12dp"
+            tools:ignore="Autofill,TextFields" />
+
+        <!-- Email Input -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableEnd="@drawable/ic_clear"
+            android:hint="@string/email"
+            android:padding="12dp"
+            tools:ignore="Autofill,TextFields" />
+
+        <!-- Password Input -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableEnd="@drawable/ic_clear"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            tools:ignore="Autofill,HardcodedText" />
+
+        <!-- Confirm Password Input -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableEnd="@drawable/ic_clear"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            tools:ignore="Autofill,HardcodedText" />
+
+        <!-- Sign Up Button -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#6200EE"
+            android:text="Sign Up"
+            tools:ignore="HardcodedText" />
+
+        <!-- Or Divider -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="or"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <!-- Google Sign In Button -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edit_text"
+            android:text="@string/sign_in_with_google" />
+
+        <!-- Already have an account? -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an Account?"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/login"
+                android:textColor="#6200EE" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
