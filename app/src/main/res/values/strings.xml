@@ -3,11 +3,18 @@
 
 
     <string name="log_in">Log In</string>
+    <string name="login">Log In</string>
+
+
     <string name="sign_up">Sign Up</string>
 
 
     <string name="user_name_placeholder">User Name</string>
+    <string name="username">User Name</string>
+
     <string name="email_placeholder">Email</string>
+    <string name="email">Email</string>
+
     <string name="password_placeholder">Password</string>
 
     <string name="enter_button_text">Enter</string>
@@ -15,6 +22,11 @@
 
     <string name="ic_user_placeholder">Carlyon</string>
     <string name="title_activity_create_join_room">CreateJoinRoomActivity</string>
+
+
+    <string name="create_your_account">create your account</string>
+    <string name="sign_in_with_google">sign in with google</string>
+
 
 
 </resources>
