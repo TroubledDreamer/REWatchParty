@@ -21,6 +21,7 @@ class WaitRoomActivity : AppCompatActivity() {
     private lateinit var userContainer: LinearLayout
     private lateinit var adapter: ArrayAdapter<String>
 
+
     private val addedUsers = mutableSetOf<String>()
     private lateinit var userViewModel: UserViewModel
 

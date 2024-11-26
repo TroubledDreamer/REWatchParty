@@ -64,8 +64,13 @@ class MainActivity : ComponentActivity() {
 
             if (password.isNotEmpty()) {
                 // Navigate to WaitRoomActivity once password is entered
-                val intent = Intent(this, WaitRoomActivity::class.java)
+//                val intent = Intent(this, WaitRoomActivity::class.java)
+//                startActivity(intent)
+                val intent = Intent(this, YouTubeActivity::class.java)
                 startActivity(intent)
+
+
+
 
 
             } else {
