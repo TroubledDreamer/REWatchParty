@@ -30,6 +30,12 @@
         android:padding="16dp"
         android:scrollbarSize="10dp">
 
+        <SearchView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineSpotShadowColor="#FFFFFD" />
+
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
@@ -71,10 +77,6 @@
             android:textColor="@color/join_background"
             android:textSize="16sp"
             android:textStyle="bold" />
-
-        <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
     </LinearLayout>
 

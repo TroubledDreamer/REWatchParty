@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.loginn_activity)
+        setContentView(R.layout.login_activity)
 
 //        FirebaseApp.initializeApp(this);
 //        val database3 = FirebaseDatabase.getInstance();

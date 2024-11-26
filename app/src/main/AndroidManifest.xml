@@ -8,7 +8,7 @@
     <uses-feature
         android:name="android.software.leanback"
         android:required="false" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:banner="@mipmap/ic_launcher"
@@ -19,11 +19,11 @@
         <activity
             android:name=".CreateOrJoinWPActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".CreateJoinRoomActivity"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_create_join_room"-->
-<!--            android:theme="@style/Theme.REWatchParty" />-->
+        <activity
+            android:name=".CreateRoomActivity"
+            android:exported="false"
+            android:label="@string/title_activity_create_join_room"
+            android:theme="@style/Theme.REWatchParty" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
