@@ -62,6 +62,13 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="411dp">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMessages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
