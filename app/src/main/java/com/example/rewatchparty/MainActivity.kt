@@ -47,23 +47,22 @@ class MainActivity : ComponentActivity() {
         SignInButton = findViewById(R.id.SignInButton)
         EmailInput = findViewById(R.id.EmailInput)
         PasswordInput = findViewById(R.id.PasswordInput)
-        UserNameInput = findViewById(R.id.UserNameInput)
         EditButton = findViewById(R.id.EditButton)
 
         // Hide EmailInput initially
-        EmailInput.visibility = View.GONE
-        UserNameInput.hint = "Username and Email"
+//        EmailInput.visibility = View.GONE
+//        UserNameInput.hint = "Username and Email"
 
         // Handle "Sign In" button click
         SignInButton.setOnClickListener {
-            UserNameInput.hint = "Username"
-            EmailInput.visibility = View.VISIBLE
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
 
         // Handle "Login" button click
-        LoginButton.setOnClickListener {
-            UserNameInput.hint = "Username and Email"
-            EmailInput.visibility = View.GONE
+         LoginButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         // Initialize UserViewModel
@@ -72,77 +71,80 @@ class MainActivity : ComponentActivity() {
         // Handle "Edit" button click (navigate to waiting room when password is entered)
         EditButton.setOnClickListener {
             val password = PasswordInput.text.toString()
-            val userName = UserNameInput.text.toString()
             val email = EmailInput.text.toString()
 
-            insertDataToDatabase()
-
-            if (password.isNotEmpty()) {
-                val intent = Intent(this, CreateOrJoinWPActivity::class.java)
-                startActivity(intent)
+            if (password.isNotEmpty() && email.isNotEmpty()) {
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Log.d(TAG, "signInWithEmail:success")
+                        val intent = Intent(this, CreateOrJoinWPActivity::class.java)
+                        startActivity(intent)
+                        val user2 = auth.currentUser
+                        Toast.makeText(
+                            baseContext, "Authentication successful.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        finish()
+                    } else {
+                        Log.w(TAG, "signInWithEmail:failure", task.exception)
+                        Toast.makeText(
+                            baseContext, "Authentication failed.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
             } else {
                 // Inform the user that the password is required
-                Toast.makeText(this, "Please enter all your credentials.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter all your credentials.", Toast.LENGTH_SHORT)
+                    .show()
             }
-
-}
-
-    }
-    private fun inputCheck(userName: String, email: String, password: String): Boolean {
-        return !(userName.isEmpty() && email.isEmpty() && password.isEmpty())
-
-    }
-    private fun insertDataToDatabase() {
-        val userName = UserNameInput.text.toString()
-        val email = EmailInput.text.toString()
-        val password = PasswordInput.text.toString()
-        val roomID = ""
-
-        if (inputCheck(userName, email, password)) {
-            // Create User object
-            val user = User(0, userName, email, password, roomID)
-            // Add data to database
-            userViewModel.insertUser(user)
-            val userMap = hashMapOf(
-                "userName" to userName,
-                "email" to email,
-                "password" to password,
-                "roomID" to roomID
-            )
-
-            val userId = auth.currentUser!!.uid
-
-            db.collection("users").document(userId).set(userMap)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Successfully added!", Toast.LENGTH_SHORT).show()
-                    EmailInput.text.clear()
-                    PasswordInput.text.clear()
-                    UserNameInput.text.clear()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Failed to add!", Toast.LENGTH_SHORT).show()
-                }
-
-            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d(TAG, "signInWithEmail:success")
-                    val user2 = auth.currentUser
-                    Toast.makeText(
-                        baseContext, "Authentication successful.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }else{
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(
-                        baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                }
-        }
-    }
+        }}}
 
 
 
 
-}
+
+//    private fun inputCheck(userName: String, email: String, password: String): Boolean {
+//        return !(userName.isEmpty() && email.isEmpty() && password.isEmpty())
+//
+//    }
+//    private fun insertDataToDatabase() {
+//        val email = EmailInput.text.toString()
+//        val password = PasswordInput.text.toString()
+//        val roomID = ""
+//
+//        if (email.isNotEmpty() && password.isNotEmpty()) {
+//            // Create User object
+//            val user = User(0, email, password, roomID)
+//            // Add data to database
+//            userViewModel.insertUser(user)
+//            val userMap = hashMapOf(
+//                "userName" to userName,
+//                "email" to email,
+//                "password" to password,
+//                "roomID" to roomID
+//            )
+//
+//            val userId = auth.currentUser!!.uid
+//
+//            db.collection("users").document(userId).set(userMap)
+//                .addOnSuccessListener {
+//                    Toast.makeText(this, "Successfully added!", Toast.LENGTH_SHORT).show()
+//                    EmailInput.text.clear()
+//                    PasswordInput.text.clear()
+//                    UserNameInput.text.clear()
+//                }
+//                .addOnFailureListener {
+//                    Toast.makeText(this, "Failed to add!", Toast.LENGTH_SHORT).show()
+//                }
+
+
+
+//                }
+//        }
+//
+//
+//
+//
+//
+//}

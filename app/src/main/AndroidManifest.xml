@@ -25,6 +25,10 @@
             android:label="@string/title_activity_create_join_room"
             android:theme="@style/Theme.REWatchParty" />
         <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.REWatchParty" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

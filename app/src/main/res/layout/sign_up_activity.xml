@@ -93,7 +93,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
-            android:text="@string/create_your_account"
+            android:text="Create your account"
             android:textColor="#000000"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -106,7 +106,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_edit_text"
             android:drawableEnd="@drawable/ic_clear"
-            android:hint="@string/username"
+            android:hint="Username"
             android:padding="12dp"
             tools:ignore="Autofill,TextFields" />
 
@@ -117,7 +117,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/rounded_edit_text"
             android:drawableEnd="@drawable/ic_clear"
-            android:hint="@string/email"
+            android:hint="Email"
             android:padding="12dp"
             tools:ignore="Autofill,TextFields" />
 
@@ -173,7 +173,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:background="@drawable/rounded_edit_text"
-            android:text="@string/sign_in_with_google" />
+            android:text="Sign in with Google" />
 
         <!-- Already have an account? -->
         <LinearLayout
@@ -193,7 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:text="@string/login"
+                android:text="Login"
                 android:textColor="#6200EE" />
         </LinearLayout>
 
