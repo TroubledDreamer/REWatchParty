@@ -36,7 +36,6 @@ class CreateRoomActivity : AppCompatActivity() {
         CreateWPButton.setOnClickListener {
             val wpID = WPIDEditText.text.toString().trim();
             val wpPassword = WPPasswordEditText.text.toString().trim();
-            val userCount = userSeekBar.progress;
 
         }
     }

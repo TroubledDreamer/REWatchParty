@@ -13,12 +13,12 @@ import androidx.compose.foundation.Image
 import com.google.firebase.auth.FirebaseAuth
 
 
-class JoinRoomActivity : AppCompatActivity() {
+class CreatePartyActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.join_watch_party);
+        setContentView(R.layout.create_watch_party);
         var auth = FirebaseAuth.getInstance();
         var user = auth.currentUser;
         if (user == null) {

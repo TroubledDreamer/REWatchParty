@@ -22,12 +22,15 @@
             android:name=".CreateOrJoinWPActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateRoomActivity"
+            android:name=".JoinRoomActivity"
             android:exported="false"
-            android:label="@string/title_activity_create_join_room"
             android:theme="@style/Theme.REWatchParty" />
         <activity
             android:name=".SignUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.REWatchParty" />
+        <activity
+            android:name=".CreatePartyActivity"
             android:exported="false"
             android:theme="@style/Theme.REWatchParty" />
         <activity
