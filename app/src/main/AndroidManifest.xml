@@ -21,11 +21,11 @@
         <activity
             android:name=".CreateOrJoinWPActivity"
             android:exported="false" />
-        <activity
-            android:name=".CreateRoomActivity"
-            android:exported="false"
-            android:label="@string/title_activity_create_join_room"
-            android:theme="@style/Theme.REWatchParty" />
+<!--        <activity-->
+<!--            android:name=".CreateRoomActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_create_join_room"-->
+<!--            android:theme="@style/Theme.REWatchParty" />-->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -38,6 +38,14 @@
         </activity>
         <activity android:name=".WaitRoomActivity" />
         <activity android:name=".YouTubeActivity" />
+        <activity android:name=".WatchMovieActivity" />
+        <activity android:name=".RoomDetailsActivity" />
+        <activity android:name=".JoinRoomActivity" />
+        <activity android:name=".CreateRoomActivity" />
+
+
+
+
     </application>
 
 </manifest>
