@@ -4,4 +4,4 @@ LiveParty is an Android application designed to facilitate real-time video watch
 
 # Feature
 
-- [User Authentication](#User Authetication)
+- #User Authetication
