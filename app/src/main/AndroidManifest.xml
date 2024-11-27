@@ -27,6 +27,24 @@
             </intent-filter>
         </activity>
 
+
+        <!-- Enter Youtube Link Page -->
+        <activity
+            android:name=".URLMovieSelect"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".RoomInvite"> <!-- name of page after URL movie selecting page -->
+            <!-- For now, I am using the room invite Page -->
+            <!-- Activity declaration -->
+        </activity>
+
         <activity android:name=".WaitRoomActivity" />
     </application>
 
