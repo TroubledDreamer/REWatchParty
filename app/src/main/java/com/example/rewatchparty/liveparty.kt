@@ -1,6 +1,7 @@
 package com.example.rewatchparty
 //activity_main.xml should be live_party.xml
 
+import MessageAdapter
 import android.content.Intent
 import android.media.Image
 import android.os.Bundle
@@ -14,14 +15,26 @@ import com.google.firebase.Firebase
 import com.google.firebase.database.database
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
+import androidx.recyclerview.widget.RecyclerView
+import com.example.rewatchparty.data.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.*
+
 
 class liveparty : AppCompatActivity() {
+
+    private lateinit var messagedatabase: DatabaseReference
+    private lateinit var messageAdapter: MessageAdapter
+    private val messages = mutableListOf<Message>()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.live_party);
     //Initializing Firebase Auth
+        messagedatabase = FirebaseDatabase.getInstance().getReference("messages")
         var auth = FirebaseAuth.getInstance();
         var user = auth.currentUser;
         if (user == null) {
@@ -31,14 +44,39 @@ class liveparty : AppCompatActivity() {
         var firestoreref = FirebaseFirestore.getInstance();
         fetchVideo(firestoreref);
 
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewMessages);
+        val sendButton = findViewById<Button>(R.id.button2);
         val editTextInput = findViewById<EditText>(R.id.editTextText);
-        val sendDisplayButton = findViewById<Button>(R.id.button2);
-        val textoutput = findViewById<TextView>(R.id.textView7);
 
-        sendDisplayButton.setOnClickListener {
-            val inputText = editTextInput.text.toString();
-            textoutput.text = inputText;
+        messageAdapter = MessageAdapter(messages);
+        recyclerView.adapter = messageAdapter;
+        recyclerView.layoutManager = LinearLayoutManager(this);
+
+        messagedatabase.addChildEventListener(object : ChildEventListener{
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+                val message = snapshot.getValue(Message::class.java);
+                if (message != null) {
+                    messages.add(message);
+                    messageAdapter.notifyItemInserted(message.size - 1)
+                    recyclerView.scrollToPosition(message.size - 1)
+                }
+            }
+
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?){}
+            override fun onChildRemoved(snapshot: DataSnapshot) {}
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {}
+            override fun onCancelled(error: DatabaseError) {}
+        })
+        //Send a new message
+        sendButton.setOnClickListener {
+            val text = editTextInput.text.toString();
+            if (text.isNotEmpty()) {
+                val message = Message(user!!.email!!, text);
+                messagedatabase.push().setValue(message);
+                editTextInput.text.clear();
+            }
         }
+
     }
 
     private fun fetchVideo(firestoreref: FirebaseFirestore) {
