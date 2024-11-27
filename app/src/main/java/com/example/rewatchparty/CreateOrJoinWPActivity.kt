@@ -17,8 +17,8 @@ class CreateOrJoinWPActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_or_join_wpactivity)
 
         // Bind views
-        createRoomButton = findViewById(R.id.createButton)
-        joinRoomButton = findViewById(R.id.joinParty)
+        createRoomButton = findViewById(R.id.createPart)
+        joinRoomButton = findViewById(R.id.joinPart)
 
         // Handle "Create Room" button click
         createRoomButton.setOnClickListener {
@@ -32,5 +32,6 @@ class CreateOrJoinWPActivity : AppCompatActivity() {
             val intent3 = Intent(this, JoinRoomActivity::class.java)
             startActivity(intent3)
         }
+
     }
 }

@@ -48,7 +48,10 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/rounded_edit_text"
             android:hint="Enter Watch Party ID...."
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:textColor="@color/fui_bgApple"
+            android:textColorHint="@color/fui_bgApple"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/roomPasswordEditText"
@@ -59,7 +62,10 @@
             android:background="@drawable/rounded_edit_text"
             android:hint="Enter Password"
             android:inputType="textPassword"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:textColor="@color/fui_bgApple"
+            android:textColorHint="@color/fui_bgApple"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/joinRoomButton"

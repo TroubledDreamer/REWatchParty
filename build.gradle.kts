@@ -6,6 +6,7 @@ plugins {
     id("com.android.library") version "8.0.2" apply false
     alias(libs.plugins.kotlin.android) apply false
     id("com.google.devtools.ksp") version "1.9.10-1.0.13" apply false
+
 //    alias(libs.plugins.kotlin.compose) apply false
 
 

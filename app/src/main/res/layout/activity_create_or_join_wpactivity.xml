@@ -45,22 +45,10 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/createButton"
-        android:layout_width="222dp"
-        android:layout_height="197dp"
-        android:layout_marginTop="116dp"
-        android:background="@color/cardview_light_background"
-        app:circularflow_defaultRadius="@dimen/cardview_default_radius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:srcCompat="@drawable/createwatchparty_foreground"
-        android:contentDescription="Create Watch Party button with TV icon"/>
+
 
     <ImageButton
-        android:id="@+id/joinParty"
+        android:id="@+id/joinPart"
         android:layout_width="219dp"
         android:layout_height="190dp"
         android:layout_marginTop="120dp"
@@ -71,6 +59,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         app:srcCompat="@drawable/capture"
+        android:contentDescription="Join Watch Party Button with a add user icon"/>
+
+    <ImageButton
+        android:id="@+id/createPart"
+        android:layout_width="219dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="120dp"
+        android:background="@android:color/background_light"
+        app:circularflow_defaultRadius="@dimen/cardview_default_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:srcCompat="@drawable/createwatchparty_foreground"
         android:contentDescription="Join Watch Party Button with a add user icon"/>
 
     <TextView

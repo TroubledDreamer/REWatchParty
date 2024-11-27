@@ -18,7 +18,7 @@ import com.google.firebase.FirebaseApp
 
 class MainActivity : ComponentActivity() {
 
-    private lateinit var userViewModel: UserViewModel
+//    private lateinit var userViewModel: UserViewModel
 
     private lateinit var LoginButton: TextView
     private lateinit var SignInButton: TextView
@@ -34,7 +34,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
 
-        // Initialize Firebase Authentication
+//        FirebaseApp.initializeApp(this);
+//        val database3 = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance()
 
         // Bind views
@@ -67,7 +68,7 @@ class MainActivity : ComponentActivity() {
         }
 
         // Initialize UserViewModel
-        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+//        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         // Handle "Edit" button click (sign-in or sign-up)
         EditButton.setOnClickListener {
@@ -125,7 +126,7 @@ class MainActivity : ComponentActivity() {
 
                     // Create User object for local database (ViewModel)
                     val userObj = User(0, userName, email, password, "")
-                    userViewModel.insertUser(userObj)
+//                    userViewModel.insertUser(userObj)
 
                     // Create Firestore document with user data
                     val userMap = hashMapOf(
