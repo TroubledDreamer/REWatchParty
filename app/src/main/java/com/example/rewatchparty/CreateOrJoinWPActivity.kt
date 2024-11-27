@@ -17,7 +17,7 @@ class CreateOrJoinWPActivity : AppCompatActivity() {
 
     private lateinit var createRoomButton: ImageButton;
     private lateinit var joinRoomButton: ImageButton;
-    val db = Firebase.firestore
+//    val db = Firebase.firestore
 //    val usersCollection = db.collection("users")
 //    val partiesCollection = db.collection("parties")
 

@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var UserNameInput: EditText
     private lateinit var EditButton: Button
     private lateinit var auth: FirebaseAuth
-    private var db = Firebase.firestore
+//    private var db = Firebase.firestore
     private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
