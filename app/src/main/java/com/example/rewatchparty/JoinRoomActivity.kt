@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import androidx.appcompat.app.AppCompatActivity
 
@@ -20,7 +19,7 @@ class JoinRoomActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.join_watch_party)  // Ensure this layout is correct
+        setContentView(R.layout.join_watch_party)
 
         // Initialize the views
         roomIdEditText = findViewById(R.id.roomIdEditText)
@@ -46,7 +45,7 @@ class JoinRoomActivity : AppCompatActivity() {
             // Fetch the room data from Firebase
             roomRef.get().addOnSuccessListener { snapshot ->
                 if (snapshot.exists()) {
-                    // Retrieve stored password and user count from the room data
+                    // Retrieve stored password from the room data
                     val storedPassword = snapshot.child("password").getValue(String::class.java)
                     val maxUsers = snapshot.child("maxUsers").getValue(Int::class.java) ?: 8
                     val usersRef = roomRef.child("users")
@@ -58,23 +57,20 @@ class JoinRoomActivity : AppCompatActivity() {
                             val currentUserCount = userSnapshot.childrenCount
 
                             if (currentUserCount < maxUsers) {
-                                // Get current user ID (assuming user is logged in)
-                                val currentUserId = FirebaseAuth.getInstance().currentUser?.uid
-
-                                if (currentUserId != null) {
-                                    // Add the user to the room under the "users" node
-                                    usersRef.child(currentUserId).setValue(FirebaseAuth.getInstance().currentUser?.email)
-                                        .addOnCompleteListener { task ->
-                                            if (task.isSuccessful) {
-                                                roomInfoTextView.text = "You have successfully joined the room!"
-                                                // Optionally navigate to another activity (e.g., video controls)
-                                                // val intent = Intent(this, YouTubeActivity::class.java)
-                                                // startActivity(intent)
-                                            } else {
-                                                roomInfoTextView.text = "Failed to add you to the room. Please try again."
-                                            }
+                                // Add the user to the room under the "users" node
+                                val userId = "user_${System.currentTimeMillis()}"  // Generate a temporary user ID
+                                usersRef.child(userId).setValue("User $userId")
+                                    .addOnCompleteListener { task ->
+                                        if (task.isSuccessful) {
+                                            roomInfoTextView.text = "You have successfully joined the room!"
+                                            // Optionally navigate to another activity (e.g., video controls)
+                                            val intent = Intent(this, YouTubeActivity::class.java)
+                                            intent.putExtra("roomId", roomId)  // Pass the room ID
+                                            startActivity(intent)
+                                        } else {
+                                            roomInfoTextView.text = "Failed to add you to the room. Please try again."
                                         }
-                                }
+                                    }
                             } else {
                                 roomInfoTextView.text = "The room is full. Cannot join."
                             }
@@ -91,3 +87,5 @@ class JoinRoomActivity : AppCompatActivity() {
         }
     }
 }
+
+

@@ -48,9 +48,9 @@ class MainActivity : ComponentActivity() {
 
         // Pre-fill the inputs with default credentials for testing
 //        UserNameInput.setText("carlyonja@gmail.com")
-        UserNameInput.setText("carlionjones@gmail.com")
+        UserNameInput.setText("carlyonja@gmail.com")
 
-        EmailInput.setText("carlionjones@gmail.com")
+        EmailInput.setText("carlyonja@gmail.com")
         PasswordInput.setText("123456")
 
         // Hide EmailInput initially
