@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import android.widget.Toast
+import androidx.compose.ui.semantics.text
+//import androidx.glance.visibility
 import androidx.lifecycle.ViewModelProvider
 import com.example.rewatchparty.data.User
 import com.example.rewatchparty.data.UserViewModel
@@ -29,6 +31,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var auth: FirebaseAuth
     private var db = FirebaseFirestore.getInstance()
     private val TAG = "MainActivity"
+    private var isSignInMode = true // Track sign-in/sign-up mode
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,23 +51,34 @@ class MainActivity : ComponentActivity() {
 
         // Pre-fill the inputs with default credentials for testing
 //        UserNameInput.setText("carlyonja@gmail.com")
-        UserNameInput.setText("carlionjones@gmail.com")
-
-        EmailInput.setText("carlionjones@gmail.com")
-        PasswordInput.setText("123456")
+//        UserNameInput.setText("carlyonja@gmail.com")
+//
+//        EmailInput.setText("carlyonja@gmail.com")
+//        PasswordInput.setText("123456")
 
         // Hide EmailInput initially
         EmailInput.visibility = View.GONE
         UserNameInput.hint = "Username and Email"
 
         // Handle "Sign In" button click (switch to login mode)
+//        SignInButton.setOnClickListener {
+//            UserNameInput.hint = "Username"
+//            EmailInput.visibility = View.VISIBLE
+//        }
+
         SignInButton.setOnClickListener {
+            isSignInMode = true // Set sign-in mode
             UserNameInput.hint = "Username"
             EmailInput.visibility = View.VISIBLE
         }
 
         // Handle "Login" button click (switch to sign-up mode)
+//        LoginButton.setOnClickListener {
+//            UserNameInput.hint = "Username and Email"
+//            EmailInput.visibility = View.GONE
+//        }
         LoginButton.setOnClickListener {
+            isSignInMode = false // Set sign-up mode
             UserNameInput.hint = "Username and Email"
             EmailInput.visibility = View.GONE
         }
@@ -76,11 +90,11 @@ class MainActivity : ComponentActivity() {
         EditButton.setOnClickListener {
             val password = PasswordInput.text.toString()
             val userName = UserNameInput.text.toString()
-            val email = EmailInput.text.toString()
+            val email = if (isSignInMode) EmailInput.text.toString() else userName
 
             if (inputCheck(userName, email, password)) {
                 // Check if user is signing in or signing up
-                if (isSignInMode()) {
+                if (isSignInMode) {
                     signInUser(email, password)
                 } else {
                     createUserInAuth(userName, email, password)

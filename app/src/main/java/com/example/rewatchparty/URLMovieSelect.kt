@@ -47,8 +47,9 @@ class URLMovieSelect : AppCompatActivity() {
                 // Update the Firebase Realtime Database with the YouTube URL
                 roomRef.updateChildren(updateData).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        // Navigate to another activity after saving the URL
-                        val intent = Intent(this, RoomInvite::class.java)
+                        // Navigate to WatchMovieActivity after saving the URL
+                        val intent = Intent(this, YouTubeActivity::class.java)
+                        intent.putExtra("roomId", roomId)  // Pass roomId to WatchMovieActivity
                         startActivity(intent)
                     } else {
                         roomText.text = "Failed to submit URL. Please try again."
