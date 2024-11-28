@@ -18,8 +18,8 @@
     <!-- Foreground Content -->
 
     <LinearLayout
-        android:layout_width="544dp"
-        android:layout_height="530dp"
+        android:layout_width="549dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:background="#A6000000"
@@ -33,6 +33,7 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="15dp"
             android:text="Join Watch Party"
             android:textAlignment="center"
             android:textColor="#F8F5F5"
@@ -40,7 +41,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/roomIdEditText"
+            android:id="@+id/WPIDEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="30dp"
@@ -48,13 +49,10 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/rounded_edit_text"
             android:hint="Enter Watch Party ID...."
-            android:padding="12dp"
-            android:textColor="@color/fui_bgApple"
-            android:textColorHint="@color/fui_bgApple"
-            android:textStyle="bold" />
+            android:padding="12dp" />
 
         <EditText
-            android:id="@+id/roomPasswordEditText"
+            android:id="@+id/WPPasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
@@ -62,10 +60,7 @@
             android:background="@drawable/rounded_edit_text"
             android:hint="Enter Password"
             android:inputType="textPassword"
-            android:padding="12dp"
-            android:textColor="@color/fui_bgApple"
-            android:textColorHint="@color/fui_bgApple"
-            android:textStyle="bold" />
+            android:padding="12dp" />
 
         <Button
             android:id="@+id/joinRoomButton"
@@ -83,9 +78,9 @@
             android:id="@+id/roomInfoTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
             android:layout_marginTop="16dp"
             android:gravity="center"
+            android:text=""
             android:textColor="#FF0000"
             android:textSize="16sp" />
 
