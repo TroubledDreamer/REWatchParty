@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffff">
+
+    <TextView
+        android:id="@+id/platform_services"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Platform Services"
+        android:textSize="14sp"
+        android:textColor="#B0B0B0"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/watch_party"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WATCH PARTY"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_below="@id/platform_services"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search..."
+        android:layout_below="@id/watch_party"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/search_bar_background"
+        android:padding="12dp"
+        android:drawableEnd="@drawable/ic_search" />
+
+    <GridLayout
+        android:id="@+id/grid_layout"
+        android:layout_width="395dp"
+        android:layout_height="419dp"
+        android:layout_below="@id/search_bar"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="16dp"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="3">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="151dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/youtube" />
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="303dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/netflix" />
+
+        <ImageView
+            android:layout_width="76dp"
+            android:layout_height="154dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/disney" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="237dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/prime" />
+
+        <ImageView
+            android:layout_width="112dp"
+            android:layout_height="91dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/hbo" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="36dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/paramount" />
+
+        <ImageView
+            android:layout_width="108dp"
+            android:layout_height="55dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/hulu" />
+
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="61dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/warner" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="95dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/peacock" />
+
+        <ImageView
+            android:layout_width="63dp"
+            android:layout_height="263dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:src="@drawable/directtv" />
+    </GridLayout>
+</RelativeLayout>
