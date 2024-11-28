@@ -42,6 +42,11 @@
         <activity android:name=".JoinRoomActivity" />
         <activity android:name=".CreateRoomActivity" />
 
+        <activity android:name=".RoomInvite" />
+
+        <activity android:name=".URLMovieSelect"/>
+
+
 
 
 

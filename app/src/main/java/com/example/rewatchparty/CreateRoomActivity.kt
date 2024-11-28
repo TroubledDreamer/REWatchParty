@@ -9,6 +9,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import com.google.firebase.database.FirebaseDatabase
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class CreateRoomActivity : AppCompatActivity() {
 
@@ -43,6 +44,10 @@ class CreateRoomActivity : AppCompatActivity() {
 
             // Create room data
             val roomData = hashMapOf(
+                "currentTime" to 0,
+                "isPaused" to true,
+                "leader" to FirebaseAuth.getInstance().currentUser?.uid,  // Replace with actual user ID
+                "seekTime" to 0,
                 "password" to wpPassword,
                 "maxUsers" to userCount,
                 "users" to mutableMapOf<String, String>()  // Empty map for now, will be populated with user IDs later
@@ -56,8 +61,8 @@ class CreateRoomActivity : AppCompatActivity() {
             roomsRef.child(wpID).setValue(roomData)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        // Navigate to RoomDetailsActivity after successful creation
-                        val intent = Intent(this, RoomDetailsActivity::class.java)
+                        // Navigate to URLMovieSelectActivity after room creation
+                        val intent = Intent(this, URLMovieSelect::class.java)
                         intent.putExtra("roomId", wpID)  // Pass the room ID to the next activity
                         startActivity(intent)
                         finish()  // Optionally finish this activity
@@ -66,5 +71,6 @@ class CreateRoomActivity : AppCompatActivity() {
                     }
                 }
         }
+
     }
 }
