@@ -82,7 +82,40 @@
                 android:id="@+id/youtube_webview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal|bottom">
 
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="<<Seek" />
+                <!-- First Button -->
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Play" />
+
+                <!-- Second Button -->
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pause" />
+
+                <!-- Third Button -->
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seek>>" />
+            </LinearLayout>
+
+            
         </FrameLayout>
     </LinearLayout>
 </FrameLayout>
