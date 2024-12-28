@@ -2,6 +2,8 @@
 
 LiveParty is an Android application designed to facilitate real-time video watch parties. Users can join live sessions to watch videos together, send messages, and interact in a shared experience. The app integrates Firebase for authentication, database management, and video hosting, making it a modern solution for virtual gatherings.
 
+https://youtu.be/xWgjbji0_PU
+
 ## Feature
 - **User Authentication**: Secure login and signup with Firebase Authentication.
 - **Video Playback**: Real-time video streaming using Firebase Firestore for video URLs.
